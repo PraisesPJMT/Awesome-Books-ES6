@@ -1,1 +1,87 @@
 /* AWESOME BOOKS ES6 STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@400;700;800&display=swap');
+
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Typography */
+
+h1,
+h2,
+.logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+p,
+span,
+a {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+/* Header Styles */
+
+header {
+  background: #aba8a9;
+  padding: 0.5em 2em;
+}
+
+.header-wrapper {
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.logo {
+  border-top: 3px solid #cbf83b;
+  border-bottom: 2px solid #cbf83b;
+  line-height: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+nav {
+  gap: 1.3em;
+}
+
+nav a {
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #cbf83b;
+  transform: scale(1.1);
+  font-weight: bold;
+}
