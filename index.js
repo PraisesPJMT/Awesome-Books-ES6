@@ -1,5 +1,6 @@
 import { DateTime } from './modules/luxon.js';
 import dateFormat from './modules/date.js';
+import { reload, bookCatalog } from "./modules/local-storage.js";
 
 const bookForm = document.forms['add-book-form'];
 const addBook = document.querySelector('.add-book');
@@ -7,17 +8,15 @@ const bookList = document.querySelector('.book-list');
 const navBar = document.querySelectorAll('nav a');
 const date = document.querySelector('#date');
 
-const list = document.querySelector('#list');
+export const list = document.querySelector('#list');
 const addNew = document.querySelector('#add-new');
 const contact = document.querySelector('#contact');
 
-const bookListSection = document.querySelector('.all-books');
+export const bookListSection = document.querySelector('.all-books');
 const addBookSection = document.querySelector('.add-books');
 const contactSection = document.querySelector('.contacts');
 
 const errorMessage = bookForm.querySelector('.input-error');
-
-let bookCatalog = [];
 
 class Book {
   constructor(title, author) {
@@ -78,15 +77,6 @@ addBook.addEventListener('click', (click) => {
   }
 });
 
-const reload = () => {
-  if (localStorage.getItem('bookCatalog') === null) {
-    bookCatalog = [];
-  } else {
-    bookCatalog = JSON.parse(localStorage.getItem('bookCatalog'));
-  }
-  list.classList.add('active');
-  bookListSection.classList.add('show');
-};
 reload();
 
 bookCatalog.forEach((book) => {
