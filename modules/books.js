@@ -36,13 +36,15 @@ class Book {
     }
 }
 
-bookCatalog.forEach((book) => {
-  bookList.innerHTML += `<li class='book-item'>
+export const load = () => {
+  bookCatalog.forEach((book) => {
+    bookList.innerHTML += `<li class='book-item'>
         <p>
         <span class="book-title">"${book.title}"</span> by <span class='book-author'>${book.author}</span>
     </p>
     <button type='button' class='delete'>Delete</button>
 </li>`;
-});
+  });
+};
 
 export default Book;

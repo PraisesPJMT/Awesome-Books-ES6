@@ -77,7 +77,8 @@ p,
 span,
 a,
 .contact,
-.input-error {
+.input-error,
+input {
   font-family: Lato, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1em;

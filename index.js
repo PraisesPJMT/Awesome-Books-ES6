@@ -1,6 +1,7 @@
 import { DateTime } from './modules/luxon.js';
 import dateFormat from './modules/date.js';
-import Book, { reload } from './modules/books.js';
+import Book, { reload, load } from './modules/books.js';
+import { listChange, addBookChange, contactChange } from './modules/nav-change.js';
 
 const bookForm = document.forms['add-book-form'];
 const addBook = document.querySelector('.add-book');
@@ -12,9 +13,9 @@ const list = document.querySelector('#list');
 const addNew = document.querySelector('#add-new');
 const contact = document.querySelector('#contact');
 
-const bookListSection = document.querySelector('.all-books');
-const addBookSection = document.querySelector('.add-books');
-const contactSection = document.querySelector('.contacts');
+// const bookListSection = document.querySelector('.all-books');
+// const addBookSection = document.querySelector('.add-books');
+// const contactSection = document.querySelector('.contacts');
 
 const errorMessage = bookForm.querySelector('.input-error');
 
@@ -56,30 +57,16 @@ addBook.addEventListener('click', (click) => {
 });
 
 reload();
+load();
 
 navBar.forEach((nav) => {
   nav.addEventListener('click', (event) => {
     if (event.target === list) {
-      list.classList.add('active');
-      addNew.classList.remove('active');
-      contact.classList.remove('active');
-      bookListSection.classList.add('show');
-      addBookSection.classList.remove('show');
-      contactSection.classList.remove('show');
+      listChange();
     } else if (event.target === addNew) {
-      list.classList.remove('active');
-      addNew.classList.add('active');
-      contact.classList.remove('active');
-      bookListSection.classList.remove('show');
-      addBookSection.classList.add('show');
-      contactSection.classList.remove('show');
+      addBookChange();
     } else if (event.target === contact) {
-      list.classList.remove('active');
-      addNew.classList.remove('active');
-      contact.classList.add('active');
-      bookListSection.classList.remove('show');
-      addBookSection.classList.remove('show');
-      contactSection.classList.add('show');
+      contactChange();
     }
   });
 });
