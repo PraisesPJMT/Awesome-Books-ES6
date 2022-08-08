@@ -2,6 +2,7 @@ import { DateTime } from './modules/luxon.js';
 import dateFormat from './modules/date.js';
 import Book, { reload, load } from './modules/books.js';
 import { listChange, addBookChange, contactChange } from './modules/nav-change.js';
+import { bookAdditionError, bookAdditionSuccess } from './modules/book-validation.js';
 
 const bookForm = document.forms['add-book-form'];
 const addBook = document.querySelector('.add-book');
@@ -12,12 +13,6 @@ const date = document.querySelector('#date');
 const list = document.querySelector('#list');
 const addNew = document.querySelector('#add-new');
 const contact = document.querySelector('#contact');
-
-// const bookListSection = document.querySelector('.all-books');
-// const addBookSection = document.querySelector('.add-books');
-// const contactSection = document.querySelector('.contacts');
-
-const errorMessage = bookForm.querySelector('.input-error');
 
 const bookObj = new Book();
 
@@ -43,16 +38,12 @@ addBook.addEventListener('click', (click) => {
                             </p>
                             <button type='button' class='delete'>Delete</button>
                         </li>`;
-    errorMessage.classList.remove('red');
-    errorMessage.classList.add('green');
-    errorMessage.innerHTML = 'New Book Added Successfully';
+    bookAdditionSuccess();
     document.querySelectorAll('input[type="text"]').forEach((element) => {
       element.value = '';
     });
   } else {
-    errorMessage.classList.add('red');
-    errorMessage.classList.remove('green');
-    errorMessage.innerHTML = 'Please the Book Title and Author should not be empty';
+    bookAdditionError();
   }
 });
 
