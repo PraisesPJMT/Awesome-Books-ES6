@@ -21,7 +21,7 @@ const dateFormat = (date) => {
   const sec = date.second.toString().padStart(2, '0');
   const time = date.hour < 12 ? 'AM' : 'PM';
 
-  return `${WeekDay} ${day}${dayNo} ${month} ${year}, ${hour}:${minute}:${sec}  ${time}`;
+  return `(${WeekDay}) ${day}${dayNo} ${month} ${year}, ${hour}:${minute}:${sec}  ${time}`;
 };
 
 export default dateFormat;

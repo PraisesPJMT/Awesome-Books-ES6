@@ -13,7 +13,6 @@ const date = document.querySelector('#date');
 const list = document.querySelector('#list');
 const addNew = document.querySelector('#add-new');
 const contact = document.querySelector('#contact');
-
 const bookObj = new Book();
 
 bookList.addEventListener('click', (event) => {
