@@ -1,6 +1,6 @@
 import { DateTime } from './modules/luxon.js';
 import dateFormat from './modules/date.js';
-import { reload, bookCatalog } from "./modules/local-storage.js";
+import Book, { reload } from './modules/books.js';
 
 const bookForm = document.forms['add-book-form'];
 const addBook = document.querySelector('.add-book');
@@ -8,37 +8,15 @@ const bookList = document.querySelector('.book-list');
 const navBar = document.querySelectorAll('nav a');
 const date = document.querySelector('#date');
 
-export const list = document.querySelector('#list');
+const list = document.querySelector('#list');
 const addNew = document.querySelector('#add-new');
 const contact = document.querySelector('#contact');
 
-export const bookListSection = document.querySelector('.all-books');
+const bookListSection = document.querySelector('.all-books');
 const addBookSection = document.querySelector('.add-books');
 const contactSection = document.querySelector('.contacts');
 
 const errorMessage = bookForm.querySelector('.input-error');
-
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-
-    createBook = (title, author) => {
-      bookCatalog.push({ title, author });
-    }
-
-    removeBook = (book) => {
-      const title = book.querySelector('.book-title').innerHTML;
-      const filt = bookCatalog.filter((book) => title.toLowerCase() === book.title.toLowerCase());
-      const filtIndex = bookCatalog.indexOf(filt[0]);
-      bookCatalog.splice(filtIndex, 1);
-    }
-
-    updateCollection = () => {
-      localStorage.setItem('bookCatalog', JSON.stringify(bookCatalog));
-    }
-}
 
 const bookObj = new Book();
 
@@ -78,15 +56,6 @@ addBook.addEventListener('click', (click) => {
 });
 
 reload();
-
-bookCatalog.forEach((book) => {
-  bookList.innerHTML += `<li class='book-item'>
-        <p>
-        <span class="book-title">"${book.title}"</span> by <span class='book-author'>${book.author}</span>
-    </p>
-    <button type='button' class='delete'>Delete</button>
-</li>`;
-});
 
 navBar.forEach((nav) => {
   nav.addEventListener('click', (event) => {
