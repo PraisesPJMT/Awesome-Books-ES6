@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+body {
+  background: #d8dfee;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -62,9 +66,11 @@ a,
 
 /* Header Styles */
 
-header {
+header,
+footer{
   background: #aba8a9;
   padding: 0.5em 2em;
+  box-shadow: 2px 2px 2px #cbf83b;
 }
 
 .header-wrapper {
@@ -101,7 +107,7 @@ nav a:hover {
 
 #date {
   justify-content: flex-end;
-  padding: 0.3em 2em;
+  padding: 1em 2em;
 }
 
 /* Book List Styles */
@@ -177,4 +183,10 @@ input[type="submit"] {
 .contact {
   gap: 0.5em;
   width: 90%;
+}
+
+/* Footer Styles */
+
+footer {
+  padding: 1em 0;
 }
