@@ -13,14 +13,16 @@
 <body>
     <header>
         <div class="header-wrapper flex">
-            <div class="logo flex-column-center">
-                <span>Awesome</span>
-                <span>Books</span>
-            </div>
+            <a href="index.html">
+                <div class="logo flex-column-center">
+                    <span>Awesome</span>
+                    <span>Books</span>
+                </div>
+            </a>
             <nav class="flex">
-                <a href="#">List</a>
-                <a href="#">Add New</a>
-                <a href="#">Contact</a>
+                <a id="list" href="#">List</a>
+                <a id="add-new" href="#">Add New</a>
+                <a id="contact" href="#">Contact</a>
             </nav>
         </div>
     </header>
@@ -28,25 +30,13 @@
         <div id="date" class="flex">
             <span>Mon August 08th 2022, 11:59:30 AM</span>
         </div>
-        <section class="section flex-column-center">
+        <section class="section all-books hide flex-column-center">
             <h2>All Awesome Books</h2>
             <hr />
             <ul class="book-list flex-column-center max-width">
-                <li class="book-item">
-                    <p>
-                        <span class="book-title">Book 1</span> by <span class="book-author">Author A</span>
-                    </p>
-                    <button type="button" class="delete">Delete</button>
-                </li>
-                <li class="book-item">
-                    <p>
-                        <span class="book-title">Book 1</span> by <span class="book-author">Author A</span>
-                    </p>
-                    <button type="button" class="delete">Delete</button>
-                </li>
             </ul>
         </section>
-        <section class="section flex-column-center">
+        <section class="section hide add-books flex-column-center">
             <h2>Add a New Book</h2>
             <hr />
             <form id="add-book-form" class="flex-column-center">
@@ -55,9 +45,10 @@
                 <div class="add-book-container">
                     <input type="submit" value="Add Book" class="add-book">
                 </div>
+                <div class="input-error"></div>
             </form>
         </section>
-        <section class="section flex-column-center">
+        <section class="section hide contacts flex-column-center">
             <h2>Add a New Book</h2>
             <hr />
             <div class="contact-container flex-column-center">
@@ -74,5 +65,6 @@
     <footer class="flex-column-center">
         <p>Copyright &copy;2022, Praises Tula</p>
     </footer>
+<!--    <script type="module" src="./modules/books.js"></script>-->
 </body>
 </html>

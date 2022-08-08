@@ -18,6 +18,10 @@ a {
   color: #000;
 }
 
+main {
+  padding: 60px 0;
+}
+
 hr {
   border: 3px solid #cbf83b;
   width: 5em;
@@ -45,6 +49,20 @@ hr {
   max-width: 600px;
 }
 
+.active {
+  color: #cbf83b;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
 /* Typography */
 
 h1,
@@ -58,7 +76,8 @@ h2,
 p,
 span,
 a,
-.contact {
+.contact,
+.input-error {
   font-family: Lato, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1em;
@@ -67,15 +86,22 @@ a,
 /* Header Styles */
 
 header,
-footer{
+footer {
   background: #aba8a9;
-  padding: 0.5em 2em;
   box-shadow: 2px 2px 2px #cbf83b;
+  position: fixed;
+  width: 100vw;
+}
+
+header {
+  top: 0;
 }
 
 .header-wrapper {
   justify-content: space-between;
   gap: 1em;
+  padding: 0.5em 2em;
+  margin: 0 auto;
 }
 
 .logo {
@@ -140,6 +166,7 @@ input[type="submit"] {
   color: #000;
   border: none;
   border-radius: 0.4em;
+  height: 35px;
 }
 
 .book-list li:nth-child(odd) {
@@ -164,7 +191,8 @@ input[type="text"] {
 }
 
 .add-book-container {
-  display: block;
+  display: flex;
+  justify-content: space-between;
 }
 
 input[type="submit"] {
@@ -189,4 +217,20 @@ input[type="submit"] {
 
 footer {
   padding: 1em 0;
+  bottom: 5px;
+}
+
+/* Error Messages */
+
+.input-error {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.red {
+  color: #f00;
+}
+
+.green {
+  color: #0f0;
 }
