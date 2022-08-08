@@ -53,7 +53,8 @@ h2,
 
 p,
 span,
-a {
+a,
+.contact {
   font-family: Lato, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1em;
@@ -125,7 +126,8 @@ nav a:hover {
   border-radius: 4px;
 }
 
-.delete {
+.delete,
+input[type="submit"] {
   padding: 0.5em 2em;
   box-shadow: 5px 5px 5px #222;
   background-color: #cbf83b;
@@ -136,4 +138,43 @@ nav a:hover {
 
 .book-list li:nth-child(odd) {
   background-color: #aba8a9;
+}
+
+/* Add Book Styles */
+
+#add-book-form {
+  gap: 1em;
+  width: 70%;
+  max-width: 300px;
+  margin: 1em auto;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #aba8a9;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.add-book-container {
+  display: block;
+}
+
+input[type="submit"] {
+  display: block;
+  float: right;
+}
+
+/* Contact Section Styles */
+
+.contact-container {
+  gap: 1em;
+  max-width: 500px;
+  margin: 1em auto;
+}
+
+.contact {
+  gap: 0.5em;
+  width: 90%;
 }
