@@ -1,8 +1,10 @@
+import { DateTime } from './modules/luxon.js';
+
 const bookForm = document.forms['add-book-form'];
 const addBook = document.querySelector('.add-book');
 const bookList = document.querySelector('.book-list');
-// const bookTitle = document.querySelector('#book-title');
 const navBar = document.querySelectorAll('nav a');
+const date = document.querySelector('#date');
 
 const list = document.querySelector('#list');
 const addNew = document.querySelector('#add-new');
@@ -64,14 +66,14 @@ addBook.addEventListener('click', (click) => {
                         </li>`;
     errorMessage.classList.remove('red');
     errorMessage.classList.add('green');
-    errorMessage.innerHTML = 'New Book Added';
+    errorMessage.innerHTML = 'New Book Added Successfully';
     document.querySelectorAll('input[type="text"]').forEach((element) => {
       element.value = '';
     });
   } else {
     errorMessage.classList.add('red');
     errorMessage.classList.remove('green');
-    errorMessage.innerHTML = 'Please the Book Title or Author should not be empty';
+    errorMessage.innerHTML = 'Please the Book Title and Author should not be empty';
   }
 });
 
@@ -121,3 +123,33 @@ navBar.forEach((nav) => {
     }
   });
 });
+
+const dateFormat = (date) => {
+  const { year } = date;
+  const monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const month = monthArr[date.month];
+  const daysArr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const WeekDay = daysArr[date.weekday];
+  const day = date.day.toString().padStart(2, '0');
+  let dayNo;
+  if (day === 1) {
+    dayNo = 'st';
+  } else if (day === 2) {
+    dayNo = 'nd';
+  } else if (day === 3) {
+    dayNo = 'rd';
+  } else {
+    dayNo = 'th';
+  }
+  let hour = date.hour % 12 || 12;
+  hour = hour.toString().padStart(2, '0');
+  const minute = date.minute.toString().padStart(2, '0');
+  const sec = date.second.toString().padStart(2, '0');
+  const time = date.hour < 12 ? 'AM' : 'PM';
+
+  return `${WeekDay} ${day}${dayNo} ${month} ${year}, ${hour}:${minute}:${sec}  ${time}`;
+};
+
+setInterval(() => {
+  date.innerHTML = dateFormat(DateTime.now());
+}, 200);

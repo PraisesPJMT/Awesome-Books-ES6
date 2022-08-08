@@ -131,7 +131,7 @@ nav a:hover {
 
 /* Date Section Styles */
 
-#date {
+.date {
   justify-content: flex-end;
   padding: 1em 2em;
 }
@@ -206,11 +206,12 @@ input[type="submit"] {
   gap: 1em;
   max-width: 500px;
   margin: 1em auto;
+  padding: 0.5em 1em;
 }
 
 .contact {
   gap: 0.5em;
-  width: 90%;
+  width: 80%;
 }
 
 /* Footer Styles */
