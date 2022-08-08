@@ -63,7 +63,7 @@ header {
 
 .logo {
   border-top: 3px solid #cbf83b;
-  border-bottom: 2px solid #cbf83b;
+  border-bottom: 3px solid #cbf83b;
   line-height: 1em;
   transition: all 0.2s ease-in-out;
 }
@@ -84,4 +84,11 @@ nav a:hover {
   color: #cbf83b;
   transform: scale(1.1);
   font-weight: bold;
+}
+
+/* Date Section Styles */
+
+#date {
+  justify-content: flex-end;
+  padding: 0.3em 2em;
 }
