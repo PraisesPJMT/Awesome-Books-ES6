@@ -12,7 +12,7 @@
 
 ## Project Preview
 
-![Awesome Book Demo](assets/demo.gif)
+![Awesome Book Demo](demo.gif)
 
 
 ## Authors
