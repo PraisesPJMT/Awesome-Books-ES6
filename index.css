@@ -1,0 +1,238 @@
+/* AWESOME BOOKS ES6 STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@400;700;800&display=swap');
+
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #d8dfee;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  padding: 60px 0;
+}
+
+hr {
+  border: 3px solid #cbf83b;
+  width: 5em;
+  margin: 0.5em auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.max-width {
+  max-width: 600px;
+}
+
+.active {
+  color: #cbf83b;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+/* Typography */
+
+h1,
+h2,
+.logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+p,
+span,
+a,
+.contact,
+.input-error,
+input {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+/* Header Styles */
+
+header,
+footer {
+  background: #aba8a9;
+  box-shadow: 2px 2px 2px #cbf83b;
+  position: fixed;
+  width: 100vw;
+}
+
+header {
+  top: 0;
+}
+
+.header-wrapper {
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.5em 2em;
+  margin: 0 auto;
+}
+
+.logo {
+  border-top: 3px solid #cbf83b;
+  border-bottom: 3px solid #cbf83b;
+  line-height: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+nav {
+  gap: 1.3em;
+}
+
+nav a {
+  transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #cbf83b;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+/* Date Section Styles */
+
+.date {
+  justify-content: flex-end;
+  padding: 1em 2em;
+}
+
+/* Book List Styles */
+
+.section {
+  margin: 1em auto;
+}
+
+.book-list {
+  list-style: none;
+  margin: 1em auto;
+  width: 90%;
+}
+
+.book-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5em 0.5em;
+  gap: 1em;
+  border-radius: 4px;
+}
+
+.delete,
+input[type="submit"] {
+  padding: 0.5em 2em;
+  box-shadow: 5px 5px 5px #222;
+  background-color: #cbf83b;
+  color: #000;
+  border: none;
+  border-radius: 0.4em;
+  height: 35px;
+}
+
+.book-list li:nth-child(odd) {
+  background-color: #aba8a9;
+}
+
+/* Add Book Styles */
+
+#add-book-form {
+  gap: 1em;
+  width: 70%;
+  max-width: 300px;
+  margin: 1em auto;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #aba8a9;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.add-book-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="submit"] {
+  display: block;
+  float: right;
+}
+
+/* Contact Section Styles */
+
+.contact-container {
+  gap: 1em;
+  max-width: 500px;
+  margin: 1em auto;
+  padding: 0.5em 1em;
+}
+
+.contact {
+  gap: 0.5em;
+  width: 80%;
+}
+
+/* Footer Styles */
+
+footer {
+  padding: 1em 0;
+  bottom: 5px;
+}
+
+/* Error Messages */
+
+.input-error {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.red {
+  color: #f00;
+}
+
+.green {
+  color: #0f0;
+}

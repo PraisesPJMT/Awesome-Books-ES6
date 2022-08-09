@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles Scripts -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- JavaScript Modules -->
+    <script type="module" src="index.js"></script>
+    <title>Awesome Books</title>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper flex">
+            <a href="index.html">
+                <div class="logo flex-column-center">
+                    <span>Awesome</span>
+                    <span>Books</span>
+                </div>
+            </a>
+            <nav class="flex">
+                <a id="list" href="#">List</a>
+                <a id="add-new" href="#">Add New</a>
+                <a id="contact" href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div  class="flex date">
+            <span id="date">Mon August 08th 2022, 11:59:30 AM</span>
+        </div>
+        <section class="section all-books hide flex-column-center">
+            <h2>All Awesome Books</h2>
+            <hr />
+            <ul class="book-list flex-column-center max-width">
+            </ul>
+        </section>
+        <section class="section hide add-books flex-column-center">
+            <h2>Add a New Book</h2>
+            <hr />
+            <form id="add-book-form" class="flex-column-center">
+                <input type="text" name="title" placeholder="Enter Book Title" id="book-title" required>
+                <input type="text" name="author" placeholder="Enter Book Author" id="book-author" required>
+                <div class="add-book-container">
+                    <input type="submit" value="Add Book" class="add-book">
+                </div>
+                <div class="input-error"></div>
+            </form>
+        </section>
+        <section class="section hide contacts flex-column-center">
+            <h2>Contact Information</h2>
+            <hr />
+            <div class="contact-container flex-column-center">
+                <p>Do you have any questions or you want to say "Hello!"? <br />
+                Please reach out to us at;</p>
+                <ul class="contact flex-column">
+                    <li><strong>Email:</strong> praisesmusa@gmail.com</li>
+                    <li><strong>Phone No.:</strong> +234(0)808-585-2828</li>
+                    <li><strong>Address:</strong> No. A045 Igabi, Kaduna State, Nigeria</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="flex-column-center">
+        <p>Copyright &copy;2022, Praises Tula</p>
+    </footer>
+</body>
+</html>
