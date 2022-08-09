@@ -1,4 +1,3 @@
-// import { list, bookListSection} from '../index.js';
 const bookList = document.querySelector('.book-list');
 const list = document.querySelector('#list');
 const bookListSection = document.querySelector('.all-books');
